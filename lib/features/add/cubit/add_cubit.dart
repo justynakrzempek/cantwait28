@@ -8,8 +8,13 @@ part 'add_state.dart';
 class AddCubit extends Cubit<AddState> {
   AddCubit() : super(const AddState());
 
-  Future<void> add(String title, String imageURL, DateTime releaseDate,) async {
+  Future<void> add(
+    String title,
+    String imageURL,
+    DateTime releaseDate,
+  ) async {
     try {
+      // throw Exception('Coś poszło nie tak'); //tak można wywołać error, żeby sprawdzić czy prawidłowo się wyświetla, poniższe dane 18-24 zakomentowane
       await FirebaseFirestore.instance.collection('items').add(
         {
           'title': title,
