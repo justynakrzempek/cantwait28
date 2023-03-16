@@ -18,6 +18,7 @@ class HomeCubit extends Cubit<HomeState> {
         .snapshots()
         .listen(
       (items) {
+        //funkcja map konwertuje doc z firebase Querysnapshot na nasze itemModel
         final itemModels = items.docs.map((doc) {
           return ItemModel(
               title: doc['title'],
